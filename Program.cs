@@ -12,7 +12,7 @@ namespace BST
             }
             if (args.Length == 1) {
                 Console.WriteLine("Construccuion de BST");
-                int[] values = ArgumentsUtil.validateTreeArgs(args[0]);
+                int?[] values = ArgumentsUtil.validateTreeArgs(args[0]);
                 foreach (var node in values) {
                     Console.WriteLine($"Nodes: {node}");
                 }

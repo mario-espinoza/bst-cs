@@ -6,10 +6,9 @@ namespace BST
 
   class ArgumentsUtil
   {
-    Func<string, int> parser = input => {
-      int output = 0;
-      try
-      {
+    static Func<string, Nullable<int>> parser = input => {
+      int? output = null;
+      try{
         output = int.Parse(input);
       }
       catch (FormatException)
@@ -20,16 +19,20 @@ namespace BST
       {
         Console.WriteLine("value out of range of the Int32 type.");
       }
-      return 0;
+      return output;
     };
 
-    public static int[] validateTreeArgs(string treeArgs)
+    public static int? validateNode(String value) {
+      return parser.Invoke(value);
+    }
+
+    public static int?[] validateTreeArgs(string treeArgs)
     {
-      int[] values = new int[] { };
+      int?[] values = new int?[] { };
 
       try
       {
-        values = treeArgs.Split(",").Select(a => int.Parse(a)).ToArray();
+        values = treeArgs.Split(",").Select(parser).Where(y => y != null) .ToArray();
       }
       catch (FormatException)
       {
@@ -41,7 +44,5 @@ namespace BST
       }
       return values;
     }
-
-
   }
 }
