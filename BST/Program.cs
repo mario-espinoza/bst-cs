@@ -18,7 +18,10 @@ namespace BST
         static void Main(string[] args)
         {
             if (args.Length == 0) {
-                Console.WriteLine("debe ingresar parametros");
+                Console.WriteLine("Debe ingresar parametros separados por espacios:");
+                Console.WriteLine("Para inicializar Arbol: lista separada por comas de valores enteros");
+                Console.Write("Para Distancia a Raiz: \n Lista separada por comas de valores enteros \n Valor nodo \n Ej: 1,2 1 \n");
+                Console.Write("Para Distancia a entre nodos: \n Lista separada por comas de valores enteros \n Valor nodo A\n Valor nodo B\n Ej: 1,2,3,4 1 4\n");
                 return;
             }
 
