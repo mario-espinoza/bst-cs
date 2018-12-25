@@ -89,7 +89,9 @@ namespace BST
       return false;
     }
 
-    public void print(Node n)
+
+
+    public static void print(Node n)
     {
       if (n == null)
         return;

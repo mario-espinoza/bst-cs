@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace BST
 {
@@ -22,17 +23,19 @@ namespace BST
       return output;
     };
 
-    public static int? validateNode(String value) {
-      return parser.Invoke(value);
+    public static int validateNode(String value) {
+      return parser.Invoke(value) ?? default(int);
     }
 
-    public static int?[] validateTreeArgs(string treeArgs)
+    public static int[] validateTreeArgs(string treeArgs)
     {
-      int?[] values = new int?[] { };
+      IEnumerable<int?> allValues = new List<int?>();
+      int[] values = new int[] { };
 
       try
       {
-        values = treeArgs.Split(",").Select(parser).Where(y => y != null) .ToArray();
+        allValues = treeArgs.Split(",").Select(parser);
+        values = allValues.Select(y => y ?? default(int)).ToArray();
       }
       catch (FormatException)
       {
