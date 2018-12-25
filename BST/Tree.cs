@@ -16,6 +16,11 @@ namespace BST
       root = null;
       count = 0;
     }
+
+    public Tree(Node root){
+      this.root = root;
+      count = 0;
+    }
     public bool isEmpty()
     {
       return root == null;
@@ -89,7 +94,7 @@ namespace BST
       {
         return -1;
       }
-      return (getDistance(root, new Node(value), 0));
+      return getDistance(root, new Node(value), 0);
     }
 
     public static int distanceBetweenNodes(Tree tree, int a, int b) {
@@ -98,7 +103,31 @@ namespace BST
         return -1;
       }
 
-      return 0;
+      var root = tree.getRoot();
+
+      if (root.getValue() == a)
+      {
+        return getDistance(root, new Node(b), 0);
+      }
+      if (root.getValue() == b)
+      {
+        return getDistance(root, new Node(a), 0);
+      }
+
+      var leftTree = new Tree(root.getLeft());
+      var rightTree = new Tree(root.getRight());
+
+      var areInDifferentBranches =  (leftTree.search(a) && rightTree.search(b)) || (leftTree.search(b) && rightTree.search(a));
+
+      if (areInDifferentBranches) {
+        return getDistance(root, new Node(a), 0) + getDistance(root, new Node(b), 0);
+      } else {
+        if (leftTree.search(a)) {
+          return  distanceBetweenNodes(leftTree, a, b);
+        } else {
+          return  distanceBetweenNodes(rightTree, a, b);
+        }
+      }
     }
   }
 }

@@ -22,7 +22,7 @@ namespace BST.Tests {
             t.print ();
             Console.Write ($": {distanceBetweenNodes}\n");
 
-            Assert.Equal (distanceBetweenNodes, expected);
+            Assert.Equal (expected, distanceBetweenNodes);
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace BST.Tests {
             t.print ();
             Console.Write ($": {distanceBetweenNodes}\n");
 
-            Assert.Equal (distanceBetweenNodes, expected);
+            Assert.Equal (expected, distanceBetweenNodes);
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace BST.Tests {
             t.print ();
             Console.Write ($": {distanceBetweenNodes}\n");
 
-            Assert.Equal (distanceBetweenNodes, expected);
+            Assert.Equal (expected, distanceBetweenNodes);
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace BST.Tests {
             t.print ();
             Console.Write ($": {distanceBetweenNodes}\n");
 
-            Assert.Equal (distanceBetweenNodes, expected);
+            Assert.Equal (expected, distanceBetweenNodes);
         }
     }
 }
