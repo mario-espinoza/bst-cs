@@ -4,7 +4,8 @@ using BST;
 
 namespace BST.Tests
 {
-    public class TreeTest
+    public class DistanceToRootTest
+    
     {
         [Fact]
         public void Test1()
