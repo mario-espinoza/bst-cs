@@ -60,41 +60,36 @@ namespace BST
     }
 
 
-    public int distance(Node a, Node b, int distance)
+    public static int getDistance(Node root, Node node, int distance)
     {
-      if (!this.search(a.getValue()))
-      {
+      if (root == null) {
         return -1;
       }
-      if (!this.search(b.getValue()))
-      {
-        return -1;
-      }
-      if (a.getValue() == b.getValue())
-      {
+      if (root.getValue() == node.getValue()){
         return distance;
       }
-      if (a.getValue() > b.getValue())
-      {
-        return this.distance(a, b.getLeft(), distance + 1);
+
+      var leftDistance = getDistance(root.getLeft(), node, distance + 1);
+
+      if (leftDistance != -1) {
+        return leftDistance;
       }
-      else
-      {
-        return this.distance(a.getRight(), b, distance + 1);
-      }
+
+      return getDistance(root.getRight(), node, distance + 1);
     }
 
-    public int distanceToRoot(int value)
+    public static int distanceToRoot(Tree tree, int value)
     {
-      if (this.root.getValue() == value)
+      var root = tree.getRoot();
+      if (root.getValue() == value)
       {
         return 0;
       }
-      if (this.search(value))
+      if (!tree.search(value))
       {
         return -1;
       }
-      return (distance(root, new Node(value), 0));
+      return (getDistance(root, new Node(value), 0));
     }
   }
 }

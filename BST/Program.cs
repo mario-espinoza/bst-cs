@@ -19,7 +19,7 @@ namespace BST
         {
             if (args.Length == 0) {
                 Console.WriteLine("Debe ingresar parametros separados por espacios:");
-                Console.WriteLine("Para inicializar Arbol: lista separada por comas de valores enteros");
+                Console.WriteLine("Para inicializar Arbol: \nlista separada por comas de valores enteros\n Ej: input 2,1,3 //output 1,2,3");
                 Console.Write("Para Distancia a Raiz: \n Lista separada por comas de valores enteros \n Valor nodo \n Ej: 1,2 1 \n");
                 Console.Write("Para Distancia a entre nodos: \n Lista separada por comas de valores enteros \n Valor nodo A\n Valor nodo B\n Ej: 1,2,3,4 1 4\n");
                 return;
@@ -44,7 +44,7 @@ namespace BST
                 
                 Tree t = setUpTree(values);
 
-                int distanceToRoot = t.distanceToRoot(node);
+                int distanceToRoot = Tree.distanceToRoot(t, node);
                 Console.Write("\n Distance To root " + distanceToRoot);
 
                 return;
