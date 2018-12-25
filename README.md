@@ -1,6 +1,6 @@
 # bst-cs #
 
-Esta Solución fue reallizada con dotnet core SDK en osx. 
+Esta Solución fue reallizada con dotnet core SDK en osx.
 
 Consta de dos proyectos:
 

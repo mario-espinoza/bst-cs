@@ -12,8 +12,6 @@ namespace BST.Tests
         public void Test1()
         {
             Node node = new Node(0);
-
-            Node.print(node);
         }
     }
 }

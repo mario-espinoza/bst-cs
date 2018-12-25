@@ -11,7 +11,6 @@ namespace BST
             Tree t = new Tree();
 
             foreach (var node in values) {
-                Console.WriteLine($"Nodes: {node}");
                 t.insert(node);
             }
 

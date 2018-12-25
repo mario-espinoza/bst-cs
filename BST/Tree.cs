@@ -93,9 +93,12 @@ namespace BST
     }
 
     public static int distanceBetweenNodes(Tree tree, int a, int b) {
+      if (!tree.search(a) || !tree.search(b))
+      {
+        return -1;
+      }
 
-
-      return -1;
+      return 0;
     }
   }
 }
