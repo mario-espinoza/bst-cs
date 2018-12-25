@@ -77,7 +77,7 @@ namespace BST.Tests
 
             Tree t = Utils.setUpTree(values);
 
-            int distanceToRoot = Tree.distanceToRoot(t, node);
+             int distanceToRoot = Tree.distanceBetweenNodes(t, nodeA, nodeB);
             Console.Write("\n Distance To root " + distanceToRoot);
 
             Assert.Equal(distanceToRoot, expected);
@@ -96,7 +96,7 @@ namespace BST.Tests
 
             Tree t = Utils.setUpTree(values);
 
-            int distanceToRoot = Tree.distanceToRoot(t, node);
+             int distanceToRoot = Tree.distanceBetweenNodes(t, nodeA, nodeB);
             Console.Write("\n Distance To root " + distanceToRoot);
 
             Assert.Equal(distanceToRoot, expected);
@@ -115,7 +115,7 @@ namespace BST.Tests
 
             Tree t = Utils.setUpTree(values);
 
-            int distanceToRoot = Tree.distanceToRoot(t, node);
+            int distanceToRoot = Tree.distanceBetweenNodes(t, nodeA, nodeB);
             Console.Write("\n Distance To root " + distanceToRoot);
 
             Assert.Equal(distanceToRoot, expected);
@@ -134,7 +134,7 @@ namespace BST.Tests
 
             Tree t = Utils.setUpTree(values);
 
-            int distanceToRoot = Tree.distanceToRoot(t, node);
+            int distanceToRoot = Tree.distanceBetweenNodes(t, nodeA, nodeB);
             Console.Write("\n Distance To root " + distanceToRoot);
 
             Assert.Equal(distanceToRoot, expected);

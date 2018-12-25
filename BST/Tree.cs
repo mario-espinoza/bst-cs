@@ -91,5 +91,11 @@ namespace BST
       }
       return (getDistance(root, new Node(value), 0));
     }
+
+    public static int distanceBetweenNodes(Tree tree, int a, int b) {
+
+
+      return -1;
+    }
   }
 }
