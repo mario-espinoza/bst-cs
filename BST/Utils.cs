@@ -5,8 +5,19 @@ using System.Collections.Generic;
 namespace BST
 {
 
-  class ArgumentsUtil
+  public class Utils
   {
+    public static Tree setUpTree(int[] values) {
+            Tree t = new Tree();
+
+            foreach (var node in values) {
+                Console.WriteLine($"Nodes: {node}");
+                t.insert(node);
+            }
+
+            return t;
+        }
+
     static Func<string, Nullable<int>> parser = input => {
       int? output = null;
       try{
